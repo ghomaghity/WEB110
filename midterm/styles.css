@@ -1,3 +1,4 @@
+/* general */
 * {
     margin: 0;
     padding: 0;
@@ -5,30 +6,8 @@
 .clearRight {
     clear: right;
 }
-.navList {
-    list-style-type: none;
-    display: inline-flex;
-}
 .accompList {
-    margin: 0 0 0 24px;
-}
-body {
-    box-sizing: border-box;
-    font-family: Verdana, sans-serif;
-    background: url("assets/bg.png") repeat;
-    line-height: 1.5;
-    background-color: #008282;
-    color: #002b2b;
-}
-body div {
-    text-align: center;
-    max-width: 800px;
-    margin: 8px auto 8px auto;
-    background: #fff;
-    padding: 8px;
-
-    border: 2px outset #747474;
-    box-shadow: 6px 6px #0003;
+    margin: 0 0 0 2rem;
 }
 header {
     background-color: #ddd;
@@ -47,34 +26,54 @@ footer {
     padding: 8px;
     font-size: 0.75rem;
 }
+
+/* nav and ul */
 nav {
     background-color: #aaa;
     padding: 4px;
 }
+.navList {
+    list-style-type: none;
+    display: inline-flex;
+}
+.navList a {
+    text-align: center;
+    padding: 8px;
+}
+.navList a:active, .navList a:hover {
+    background-color: #ddd;
+    box-shadow: 2px 2px #0003;
+}
+
+/* list with floating image */
 ol {
     margin: 0 0 0 1.5rem;
 }
 ol li {
     margin: auto;
 }
-ol li img {
+img {
     margin-left: 2rem;
     border: 2px outset #aaaaaa;
     float: right;
 }
-ul a {
+
+/* body and div for properly setting up background */
+body {
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+    background: url("assets/bg.png") repeat;
+    line-height: 1.5;
+    background-color: #008282;
+    color: #002b2b;
+}
+body div {
     text-align: center;
+    max-width: 800px;
+    margin: 8px auto 8px auto;
+    background: #fff;
     padding: 8px;
-}
 
-ul a:active, ul a:hover {
-    background-color: #ddd;
-    box-shadow: 2px 2px #0003;
-}
-
-@media (max-width: 800px) {
-    body div {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
+    border: 2px outset #747474;
+    box-shadow: 6px 6px #0003;
 }
