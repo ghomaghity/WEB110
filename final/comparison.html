@@ -29,6 +29,7 @@
         }*/
         input, textarea {
             margin-bottom: .5em;
+            resize: none;
         }
         @media (max-width:800px) {
             .commentEntryBox {
@@ -84,11 +85,14 @@
                     bytecode can then be run on multiple systems using runtime
                     environments specifically made for those systems. This allows
                     programmers to write code on one system and be fairly confident
-                    it will work on another, without having to maintain multiple
+                    it will work on another without having to maintain multiple
                     codebases.
                 <p>
-                    JavaScript can be both JIT
-                    compiled and interpreted in real time.
+                    JavaScript started off as an interpreted language, meaning programs
+                    were run through line by line. This also allows developers to write
+                    system-independent software, at the tradeoff of code generally being
+                    slower. Relatively recently, however, JavaScript has gotten multiple
+                    means of JIT compilation.
                 </p>
             </div>
             <br>
