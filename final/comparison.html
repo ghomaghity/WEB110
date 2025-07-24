@@ -11,14 +11,29 @@
 
     <style>
         form {
-            display: grid;
-            grid-template-rows: auto;
-            grid-template-columns: 6em 1fr;
-            gap: 0.5em;
-            margin-top: 0.5em;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
         }
+        .commentEntryBox {
+            width: 50%;
+        }
+        /*@supports(display: grid) {
+            form {
+                display: grid;
+                grid-template-rows: auto;
+                grid-template-columns: 6em 1fr;
+                gap: 0.5em;
+                margin-top: 0.5em;
+            }
+        }*/
         input, textarea {
             margin-bottom: .5em;
+        }
+        @media (max-width:800px) {
+            .commentEntryBox {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -40,46 +55,69 @@
                 <h3>Variable Typing</h3>
                 <p>
                     Typing refers to what type of data can be held inside of a variable.
-                    Variables in JavaScript are dynamically typed, meaning they can store whatever type can be assigned to them without issue.
-                    Java is statically typed. This means that whatever type a varaible is designated to hold when declared is the only thing it will ever be able to hold.
+                    Variables in JavaScript are dynamically typed, meaning they can store
+                    whatever type can be assigned to them without issue. Below is an
+                    example of valid JavaScript code.
+                    <div class="code_block">
+                        let t = 10<br>
+                        console.log(t) <i>--Output: "10"</i><br>
+                        t = "a string!"<br>
+                        console.log(t) <i>--output: "a string!"</i><br>
+                    </div>
                 </p>
                 <p>
-                    Whether or not 
+                    Java is statically typed. This means that whatever type a varaible
+                    is designated to hold when declared is the only type it will ever
+                    be able to hold, at least without casting it to a different type.
+                    <div class="code_block">
+                        int t = 10<br>
+                        System.out.println(t) <i>--Output: "10"</i><br>
+                        t = "a string!"<i>--Type mismatch: cannot convert from String to int</i><br>
+                    </div>
                 </p>
             </div>
             <br>
             <div>
                 <h3>Compilation Methods</h3>
                 <p>
-                    Java is just in time (JIT) compiled into bytecode. This bytecode is then interpreted using the JVM. JavaScript can be both JIT
+                    Java is just-in-time (JIT) compiled into a universal bytecode. This
+                    bytecode can then be run on multiple systems using runtime
+                    environments specifically made for those systems. This allows
+                    programmers to write code on one system and be fairly confident
+                    it will work on another, without having to maintain multiple
+                    codebases.
+                <p>
+                    JavaScript can be both JIT
                     compiled and interpreted in real time.
                 </p>
             </div>
             <br>
             <div>
-                <h3>Example</h3>
+                <h3>Downloadable Examples</h3>
                 Here's an example hello world program in Java:
                 <div class="code_block">
                     public static void main(String[] args) {<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello world!");<br>
                     }
                 </div>
+                <a class="downloadLink" href="assets/helloworld.java" download>download HelloWorld.java</a><br>
                 And here's an example hello world program in JavaScript:
                 <div class="code_block">
                     console.log("Hello world!");
                 </div>
+                <a class="downloadLink" href="assets/helloworld.js" download>download HelloWorld.js</a><br>
             </div>
         </main>
 
-        <div style="width: 50%;">
-            Have any comments?
+        <div class="commentEntryBox">
+            Have any comments? Put them here!
             <form method="post" action="https://webdevbasics.net/scripts/demo.php">
                 <label for="firstName">First Name</label>
                 <input type="text" name="firstName" id="firstName" required placeholder="your first name (required)">
                 <label for="lastName">Last Name</label>
                 <input type="text" name="lastName" id="lastName" required placeholder="your last name (required)">
                 <label for="email">E-mail</label>
-                <input type="text" name="email" id="email" required placeholder="example@example.com (required)">
+                <input type="email" name="email" id="email" required placeholder="example@example.com (required)">
                 <label for="comment">Comments</label>
                 <textarea name="comment" id="comment" rows="5" cols="40" required placeholder="your comment here (required)"></textarea>
 

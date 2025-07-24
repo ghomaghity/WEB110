@@ -10,7 +10,7 @@
     margin: 0 0 0 2rem;
 }
 header {
-    background-color: #ddd;
+    /*background-color: #ddd;*/
     text-align: center;
     padding: 8px;
 }
@@ -54,6 +54,10 @@ nav {
 .navList a:active, .navList a:hover {
     background-color: #ddd;
     box-shadow: 2px 2px #0003;
+}
+.downloadLink {
+    font-style: italic;
+    font-size: 0.75em;
 }
 
 /* displaying code */
@@ -110,10 +114,13 @@ body {
 }
 
 /*
-the media tag:
     pushes everything into a singular column
+    reduces padding around main tag
 */
 @media (max-width:800px) {
+    main {
+        padding: 1rem 1rem 1rem 1rem;
+    }
     .code_block {
         width:100%;
     }
