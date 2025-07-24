@@ -8,17 +8,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparison</title>
+
+    <style>
+        form {
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: 6em 1fr;
+            gap: 0.5em;
+            margin-top: 0.5em;
+        }
+        input, textarea {
+            margin-bottom: .5em;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="wrapper">
+    <div id="wrapper">
         <header>
-            <h1>JavaScript: It's NOT Java</h1>
+            <h1>JavaScript: It's Not Java!</h1>
         </header>
         <nav>
             <ul class="navList">
                 <li><a href="index.html">History</a></li>
-                <li><a href="interest.html">Comparison</a></li>
+                <li><a href="comparison.html">Comparison</a></li>
             </ul>
         </nav>
 
@@ -26,7 +39,12 @@
             <div>
                 <h3>Variable Typing</h3>
                 <p>
-                    Javascript is dynamically typed, Java is statically typed
+                    Typing refers to what type of data can be held inside of a variable.
+                    Variables in JavaScript are dynamically typed, meaning they can store whatever type can be assigned to them without issue.
+                    Java is statically typed. This means that whatever type a varaible is designated to hold when declared is the only thing it will ever be able to hold.
+                </p>
+                <p>
+                    Whether or not 
                 </p>
             </div>
             <br>
@@ -37,7 +55,37 @@
                     compiled and interpreted in real time.
                 </p>
             </div>
+            <br>
+            <div>
+                <h3>Example</h3>
+                Here's an example hello world program in Java:
+                <div class="code_block">
+                    public static void main(String[] args) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello world!");<br>
+                    }
+                </div>
+                And here's an example hello world program in JavaScript:
+                <div class="code_block">
+                    console.log("Hello world!");
+                </div>
+            </div>
         </main>
+
+        <div style="width: 50%;">
+            Have any comments?
+            <form method="post" action="https://webdevbasics.net/scripts/demo.php">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="firstName" required placeholder="your first name (required)">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName" required placeholder="your last name (required)">
+                <label for="email">E-mail</label>
+                <input type="text" name="email" id="email" required placeholder="example@example.com (required)">
+                <label for="comment">Comments</label>
+                <textarea name="comment" id="comment" rows="5" cols="40" required placeholder="your comment here (required)"></textarea>
+
+                <input type="submit" value="Post Comment">
+            </form>
+        </div>
 
         <footer>
             Copyright ©2025 |  Contact me at

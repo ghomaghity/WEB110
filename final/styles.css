@@ -15,16 +15,27 @@ header {
     padding: 8px;
 }
 main {
+    grid-template-columns: 60% 40%;
     text-align: left;
     background-color: #ddd;
     margin-top: 8px;
     margin-bottom: 8px;
-    padding: 1rem;
+    padding: 1rem 4rem 1rem 4rem;
+
+    /*display: grid;
+    grid-template-columns: 60% 40%;*/
 }
 footer {
     background-color: #aaa;
     padding: 8px;
     font-size: 0.75rem;
+}
+h3 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+p {
+    text-indent: 3em;
 }
 
 /* nav and ul */
@@ -45,6 +56,18 @@ nav {
     box-shadow: 2px 2px #0003;
 }
 
+/* displaying code */
+.code_block {
+    background-color: #445;
+    color: #fee;
+    border-radius: 4px;
+    padding: 0.2em 0 0.4em 0.4em;
+    font-family: Consolas, "courier new";
+    font-size: 80%;
+
+    grid-column: 2;
+}
+
 /* list with floating image */
 ol {
     margin: 0 0 0 1.5rem;
@@ -62,17 +85,20 @@ img {
 .citation {
     font-size: 0.8rem;
 }
+#citebox {
+    margin-bottom: 0.8em;
+}
 
 /* body and div for properly setting up background */
 body {
     box-sizing: border-box;
     font-family: Verdana, sans-serif;
-    background: url("assets/bg.png") repeat;
+    background: url("assets/strawberry.png") repeat;
     line-height: 1.5;
-    background-color: #008282;
-    color: #002b2b;
+    background-color: #ff7f7f;
+    color: #2b0000;
 }
-.wrapper {
+#wrapper {
     text-align: center;
     max-width: 800px;
     margin: 8px auto 8px auto;
@@ -81,4 +107,14 @@ body {
 
     border: 2px outset #747474;
     box-shadow: 6px 6px #0003;
+}
+
+/*
+the media tag:
+    pushes everything into a singular column
+*/
+@media (max-width:800px) {
+    .code_block {
+        width:100%;
+    }
 }
